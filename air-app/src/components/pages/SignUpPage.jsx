@@ -52,9 +52,9 @@ export default function SignUp() {
       email: data.get("email"),
       password: data.get("password"),
     });
-    };
-    
-    const goSignIn = () => navigate(SIGNIN_ROUTE)
+  };
+
+  const goSignIn = () => navigate(SIGNIN_ROUTE);
 
   return (
     <ThemeProvider theme={theme}>
@@ -170,7 +170,11 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link onClick={goSignIn} style={{cursor: 'pointer'}} variant="body2">
+                <Link
+                  onClick={goSignIn}
+                  style={{ cursor: "pointer" }}
+                  variant="body2"
+                >
                   Already have an account? Sign in
                 </Link>
               </Grid>

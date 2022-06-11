@@ -15,7 +15,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
 import {
   HOME_ROUTE,
@@ -23,7 +22,6 @@ import {
   CONTACTS_ROUTE,
   SIGNIN_ROUTE,
   SIGNUP_ROUTE,
-  FORGOTPASSWORD_ROUTE,
   MYPROFILE_ROUTE,
   SETTINGS_ROUTE,
   ALLREQUESTS_ROUTE,
@@ -32,12 +30,6 @@ import {
 } from "../constantes/ConstantRoute";
 import { useNavigate } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import Badge from "@mui/material/Badge";
-import useWindowDimensions from "./WindowResize";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -92,27 +84,19 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
+const IconsLeftBar = [
+  <AccountCircleIcon />,
+  <SettingsIcon />,
+  <LogoutIcon />,
+  <QuestionAnswerIcon />,
+  <TaskIcon />,
+  <AddIcon />,
+];
+
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const menuId = "primary-search-account-menu";
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const { width } = useWindowDimensions();
-
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const IconsLeftBar = [
-    <AccountCircleIcon />,
-    <SettingsIcon />,
-    <LogoutIcon />,
-    <QuestionAnswerIcon />,
-    <TaskIcon />,
-    <AddIcon />,
-  ];
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -120,23 +104,6 @@ export default function PersistentDrawerLeft() {
 
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
   };
 
   return (
