@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { purple } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
-import { Home_Route, SignIn_Route } from "../constantes/ConstantRoute";
+import { SIGNIN_ROUTE } from "../../constantes/ConstantRoute";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -21,7 +21,7 @@ export default function ForgotPasswordPage() {
   const resetPassRef = useRef();
   const navigate = useNavigate();
 
-  const goSignIn = () => navigate(SignIn_Route);
+  
   return (
     <div
       style={{
@@ -76,7 +76,7 @@ export default function ForgotPasswordPage() {
           </ColorButton>
         </div>
         <div
-          onClick={goSignIn}
+          onClick={() => navigate(SIGNIN_ROUTE)}
           style={{
             color: "#00C2E0",
             marginTop: "25px",

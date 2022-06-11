@@ -1,0 +1,11 @@
+export const HOME_ROUTE = '/';
+export const ABOUT_ROUTE = '/about';
+export const CONTACTS_ROUTE = '/contactus';
+export const SIGNIN_ROUTE = '/signin';
+export const SIGNUP_ROUTE = '/signup';
+export const FORGOTPASSWORD_ROUTE = '/forgotpassword';
+export const MYPROFILE_ROUTE = '/myprofile';
+export const SETTINGS_ROUTE = '/settings';
+export const ALLREQUESTS_ROUTE = '/allrequests';
+export const MYREQUESTS_ROUTE = '/myrequests';
+export const CREATEREQUESTS_ROUTE = '/createrequests';

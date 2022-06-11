@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import { ForgotPassword_Route, SignUp_Route } from "./constantes/ConstantRoute";
+import { FORGOTPASSWORD_ROUTE, SIGNUP_ROUTE } from "../constantes/ConstantRoute";
 
 function Copyright(props) {
   return (
@@ -49,8 +49,7 @@ export default function SignIn() {
     });
   };
 
-    const goSignUp = () => navigate(SignUp_Route);
-    const goForgotPasswordPage = () => navigate(ForgotPassword_Route)
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -113,10 +112,10 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link onClick={goForgotPasswordPage} style={{cursor: 'pointer'}} variant="body2">Forgot password?</Link>
+                <Link onClick={() => navigate(FORGOTPASSWORD_ROUTE)} style={{cursor: 'pointer'}} variant="body2">Forgot password?</Link>
               </Grid>
               <Grid item>
-                <Link onClick={goSignUp} style={{cursor: 'pointer'}} variant="body2">
+                <Link onClick={() => navigate(SIGNUP_ROUTE)} style={{cursor: 'pointer'}} variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { SignIn_Route } from "../constantes/ConstantRoute";
+import { SIGNIN_ROUTE } from "../../constantes/ConstantRoute";
 
 function Copyright(props) {
   return (
@@ -54,7 +54,7 @@ export default function SignUp() {
     });
     };
     
-    const goSignIn = () => navigate(SignIn_Route)
+    const goSignIn = () => navigate(SIGNIN_ROUTE)
 
   return (
     <ThemeProvider theme={theme}>
